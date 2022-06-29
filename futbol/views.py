@@ -42,8 +42,10 @@ def list_equipos(request):
 	Equipo.objects.all().delete()
 	equipo1 =Equipo(nombre='PSG',pais='Francia')
 	equipo2 =Equipo(nombre='Boca',pais='Argentina' )
+	equipo3 =Equipo(nombre='Union',pais='Argentina' )
 	equipo1.save()
 	equipo2.save()
+	equipo3.save()
 	equipos = Equipo.objects.all()
 	return render(request, "equipos.html", {"lista_equipos":equipos})
 
