@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block contenidoQueCambia %}
+<h1 class="text-center">Ligas</h1>
+
+    <div class="row">
+    {% for liga in lista_ligas %}
+        <div class="col-md-4" style="margin-bottom:20px">
+            <div class="card" style="width: 18rem;">   
+                <div class="card-header bg-info text-white">
+                    <h5> {{liga.nombre}} {{liga.pais}} </h5> 
+                </div>         
+                <div class="card-body">                    
+                    <p class="card-text"> pais: {{liga.pais}}</p>         
+                </div>
+            
+        
+            </div>
+        </div>         
+    {% empty %}
+    </div>
+    <div class="row justify-content-center margin-row">
+        <div>
+            <div class="card" style="width: 18rem;">           
+                <div class="card-body">                    
+                    <h5>No existen ligas en la base de datos</h5>
+                </div>
+            </div>
+        </div>         
+    </div>
+    {% endfor %}
+
+{% endblock %}

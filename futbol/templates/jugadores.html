@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block contenidoQueCambia %}
+
+<h1 class="text-center">Jugadores</h1>
+
+    <div class="row">
+    {% for jugador in lista_jugadores %}
+        <div class="col-md-4" style="margin-bottom:20px">
+            <div class="card" style="width: 18rem;">   
+                <div class="card-header bg-info text-white">
+                    <h5> {{jugador.nombre}} {{jugador.apellido}} </h5> 
+                </div>         
+                <div class="card-body">                    
+                    <p class="card-text"> dorsal: {{jugador.dorsal}}</p>
+                    <p class="card-text"> posicion: {{jugador.posicion}} </p>
+                    <p class="card-text"> peso: {{jugador.peso}} </p>
+                    <p class="card-text"> altura: {{jugador.altura}} </p>
+                    <p class="card-text"> altura: {{jugador.edad}} </p> 
+
+                </div>
+            
+        
+            </div>
+        </div>         
+    {% empty %}
+    </div>
+    <div class="row justify-content-center margin-row">
+        <div>
+            <div class="card" style="width: 18rem;">           
+                <div class="card-body">                    
+                    <h5>No existen personas en la base de datos</h5>
+                </div>
+            </div>
+        </div>         
+    </div>
+    {% endfor %}
+
+{% endblock %}
