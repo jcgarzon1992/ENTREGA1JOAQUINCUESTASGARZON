@@ -16,7 +16,7 @@ class Jugador(models.Model):
 # Create your models here.
 
 class Liga(models.Model):
-	nombre = models.CharField(max_length=30)
+	nombre = models.CharField(max_length=50)
 	pais = models.CharField(max_length=50)	
 
 # Create your models here.
